@@ -63,6 +63,7 @@ window.onload = function () {
 	requestAnimationFrame(update)
 	setInterval(placeCactus, 1000)
 	document.addEventListener("keydown", moveKarim)
+	document.addEventListener("touchstart", moveKarim)
 }
 
 function update() {
@@ -110,7 +111,7 @@ function update() {
 
 function moveKarim(e) {
 	if (gameOver) return
-
+	if (e.touches.length) velocityY = -10
 	if ((e.code == "Space" || e.code == "ArrowUp") && karim.y == karimY) {
 		// jump
 		velocityY = -10
