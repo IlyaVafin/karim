@@ -123,7 +123,7 @@ function moveKarim(e) {
 	if ((e.code == "Space" || e.code == "ArrowUp") && karim.y == karimY) {
 		// jump
 		audio.play()
-		velocityY = -10
+		velocityY = -4
 	} else if ((e.code == "KeyS" || e.code == "ArrowDown") && karim.y == karimY) {
 		if (karim.height == 150) {
 			karim.height = 50
