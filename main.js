@@ -28,7 +28,7 @@ let cactusY = canvasHeight - cactusHeight
 let cactus1Img
 let cactus2Img
 
-let velocityX = -7 // cactus moving speed
+let velocityX = -9 // cactus moving speed
 let velocityY = 0
 let gravity = 0.3
 
@@ -116,7 +116,7 @@ function moveKarim(e) {
 		e.preventDefault()
 		if (karim.y === karimY) {
 			audio.play()
-			velocityY = -1
+			velocityY = -10
 		}
 		return
 	}
