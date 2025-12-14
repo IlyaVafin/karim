@@ -35,6 +35,7 @@ let gravity = 0.3
 let gameOver = false
 let score = 0
 let restartButton
+let audio
 window.onload = function () {
 	let canvas = document.getElementById("canvas")
 	restartButton = document.getElementById("restart")
@@ -45,7 +46,7 @@ window.onload = function () {
 	canvas.style.backgroundRepeat = "no-repeat"
 	canvas.style.backgroundSize = "cover"
 	context = canvas.getContext("2d")
-
+	audio = new Audio("./zabit.mp3")
 	// draw initial karim
 
 	karimImg = new Image()
@@ -111,9 +112,17 @@ function update() {
 
 function moveKarim(e) {
 	if (gameOver) return
-	if (e.touches.length) velocityY = -10
+	if (e.type === "touchstart") {
+		e.preventDefault()
+		if (karim.y === karimY) {
+			audio.play()
+			velocityY = -10
+		}
+		return
+	}
 	if ((e.code == "Space" || e.code == "ArrowUp") && karim.y == karimY) {
 		// jump
+		audio.play()
 		velocityY = -10
 	} else if ((e.code == "KeyS" || e.code == "ArrowDown") && karim.y == karimY) {
 		if (karim.height == 150) {
