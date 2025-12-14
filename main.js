@@ -15,6 +15,10 @@ let karim = {
 	height: karimHeight,
 }
 
+let isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+
+
+
 // cactus
 let cactusArray = []
 let cactus1Width = 34
@@ -30,7 +34,7 @@ let cactus2Img
 
 let velocityX = -9 // cactus moving speed
 let velocityY = 0
-let gravity = 0.3
+let gravity = isMobile ? 0.4 : 0.3
 
 let gameOver = false
 let score = 0
