@@ -2,7 +2,7 @@ let canvasWidth = 1200
 let canvasHeight = 550
 let context
 // karim
-let karimWidth = isMobile ? 20 : 150
+let karimWidth = 150
 let karimHeight = 150
 let karimY = canvasHeight - karimHeight
 let karimX = 50
